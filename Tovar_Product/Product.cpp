@@ -5,7 +5,7 @@ using namespace std;
 
 Product::Product() : product_name(""), product_price(0.0), product_currency("") {}
 
-Product::Product(double price, string currency, string name) : product_name(name), product_price(price), product_currency(currency) {}
+Product::Product(string name, double price, string currency) : product_name(name), product_price(price), product_currency(currency) {}
 
 Product::Product(const Product& P) : product_name(P.product_name), product_price(P.product_price), product_currency(P.product_currency) {}
 
@@ -29,12 +29,13 @@ void Product::writeTo(std::ostream& out) const
 
 Product Product::operator+(double amount) const
 {
-	
+	return Product(product_name, product_price + amount, product_currency);
 }
 
 std::istream& operator>>(std::istream& in, Product& P)
 {
-	// TODO: insert return statement here
+	P.readFrom(in);
+	return in;
 }
 
 std::ostream& operator<<(std::ostream& out, const Product& P)
