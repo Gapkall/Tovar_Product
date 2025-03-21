@@ -6,9 +6,9 @@ using namespace std;
 class Product
 {
 protected:
+	string product_name;
 	double product_price;
 	string product_currency;
-	string product_name;
 
 public:
 	Product();
