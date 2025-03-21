@@ -12,7 +12,7 @@ protected:
 
 public:
 	Product();
-	Product(double price,string currency, string name);
+	Product(string name,double price,string currency);
 	Product(const Product& P);
 	virtual ~Product();
 
