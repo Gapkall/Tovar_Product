@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Order.h" />
     <ClInclude Include="Product.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Order.cpp" />
     <ClCompile Include="Product.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -16,15 +16,16 @@ public:
 	Product(const Product& P);
 	virtual ~Product();
 
-	virtual void print() const;
+	virtual void print() const abstract;
+	virtual double calculateOrder() const abstract;
 	void convertCurrency(double exchangeRate, string newCurrency);
 
-	virtual void readFrom(std::istream& in);
-	virtual void writeTo(std::ostream& out) const;
+	virtual void readFrom(istream& in);
+	virtual void writeTo(ostream& out) const;
 	Product operator+(double amount) const;
 
 };
 
-std::istream& operator>>(std::istream& in, Product& P);
-std::ostream& operator<<(std::ostream& out, const Product& P);
+istream& operator>>(istream& in, Product& P);
+ostream& operator<<(ostream& out, const Product& P);
 

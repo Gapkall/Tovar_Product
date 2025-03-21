@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "Product.h"
-using namespace std;
 
 Product::Product() : product_name(""), product_price(0.0), product_currency("") {}
 
@@ -17,12 +16,12 @@ void Product::convertCurrency(double exchangeRate, string newCurrency)
 	product_currency = newCurrency;
 }
 
-void Product::readFrom(std::istream& in)
+void Product::readFrom(istream& in)
 {
 	in >> product_price;
 }
 
-void Product::writeTo(std::ostream& out) const
+void Product::writeTo(ostream& out) const
 {
 	out << product_price;
 }
@@ -32,13 +31,14 @@ Product Product::operator+(double amount) const
 	return Product(product_name, product_price + amount, product_currency);
 }
 
-std::istream& operator>>(std::istream& in, Product& P)
+istream& operator>>(istream& in, Product& P)
 {
 	P.readFrom(in);
 	return in;
 }
 
-std::ostream& operator<<(std::ostream& out, const Product& P)
+ostream& operator<<(ostream& out, const Product& P)
 {
-	// TODO: insert return statement here
+	P.writeTo(out);
+	return out;
 }
