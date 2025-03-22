@@ -1,14 +1,14 @@
 #include "Order.h"
 
-Order::Order()
+Order::Order() : order_amount(0)
 {
 }
 
-Order::Order(double price)
+Order::Order(double price) : order_amount(order)
 {
 }
 
-Order::Order(Order& O)
+Order::Order(Order& O) : order_amount(O.order_amount)
 {
 }
 
